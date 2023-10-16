@@ -1,50 +1,98 @@
+"use client";
 import { cn } from "@/lib/utils";
+import { Button as ButtonScroll } from "react-scroll";
 
 type ButtonProps = {
 	children: React.ReactNode;
 	className?: string;
-	type?: "link" | "";
 	href?: string;
 	blank?: boolean;
+	type?: "link" | "button";
 	variant?: "primary" | "secundary";
+	width?: "default" | "full";
+	scroll?: {
+		to: string;
+		duration?: number;
+	};
+};
+
+const buttonVariants = {
+	base: "rounded-lg p-4 flex justify-center items-center gap-2.5",
+	variant: {
+		primary: "bg-white hover:bg-zinc-300 text-stone-900",
+		secundary: "bg-neutral-800 hover:bg-neutral-900 text-white"
+	},
+	width: {
+		default: "w-fit",
+		full: "w-full"
+	},
+	type: {
+		button: "",
+		link: "w-fit"
+	}
 };
 
 export function Button({
 	children,
 	className,
 	href,
-	type,
 	blank,
-	variant = "primary"
+	scroll = {
+		duration: 500,
+		to: ""
+	},
+	type = "button",
+	variant = "primary",
+	width = "default"
 }: ButtonProps) {
-	const primary = "bg-white hover:bg-zinc-300 text-stone-900";
-	const secundary = "bg-neutral-800 hover:bg-neutral-900 text-white";
-
 	return (
 		<>
-			{type === "link" ? (
-				<a
+			{scroll.to ? (
+				<ButtonScroll
 					className={cn(
-						variant === "primary" ? primary : secundary,
-						"rounded-lg font-medium p-4 text-xl flex justify-center items-center gap-2.5 w-fit",
+						buttonVariants.base,
+						buttonVariants.variant[variant],
+						buttonVariants.width[width],
+						buttonVariants.type[type],
 						className
 					)}
-					href={href}
-					target={blank ? "_blank" : "_self"}
+					to={scroll.to}
+					smooth={true}
+					duration={scroll.duration}
 				>
 					{children}
-				</a>
+				</ButtonScroll>
 			) : (
 				<>
-					<button
-						className={cn(
-							variant === "primary" ? primary : secundary,
-							"rounded-lg font-medium p-4 text-xl flex justify-center items-center gap-2.5",
-							className
-						)}
-					>
-						{children}
-					</button>
+					{type === "link" ? (
+						<a
+							className={cn(
+								buttonVariants.base,
+								buttonVariants.variant[variant],
+								buttonVariants.width[width],
+								buttonVariants.type[type],
+								className
+							)}
+							href={href}
+							target={blank ? "_blank" : "_self"}
+						>
+							{children}
+						</a>
+					) : (
+						<>
+							<button
+								className={cn(
+									buttonVariants.base,
+									buttonVariants.variant[variant],
+									buttonVariants.width[width],
+									buttonVariants.type[type],
+									className
+								)}
+							>
+								{children}
+							</button>
+						</>
+					)}
 				</>
 			)}
 		</>

@@ -38,7 +38,7 @@ const technologies = [
 
 export function About() {
 	return (
-		<Section>
+		<Section className="bg-gradient-to-b from-transparent to-neutral-950">
 			<div className="container md:text-center">
 				<Title>Saiba mais sobre este projeto</Title>
 			</div>
@@ -86,7 +86,7 @@ export function About() {
 				</ColumnContanierItem>
 				<ColumnContanierItem>
 					<Subtitle>Tecnologias utilizadas</Subtitle>
-					<ul className="grid grid-cols-3 max-md:grid-cols-2 gap-6 mt-7">
+					<ul className="grid lg:grid-cols-3 grid-cols-2 gap-6 mt-7">
 						{technologies.map((tech) => (
 							<Technology key={tech.title} title={tech.title} src={tech.src} />
 						))}

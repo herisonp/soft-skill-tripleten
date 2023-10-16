@@ -9,12 +9,12 @@ import Image from "next/image";
 
 export function Author() {
 	return (
-		<Section>
+		<Section className="bg-neutral-950">
 			<ColumnContainer>
 				<ColumnContanierItem>
 					<Title>
 						É um recrutador e curtiu o projeto? O que lhe falta para me
-						contratar? 🤔
+						contratar? <span className="text-white">🤔</span>
 					</Title>
 					<Button
 						type="link"
@@ -30,7 +30,7 @@ export function Author() {
 						/>
 						Contratar agora
 					</Button>
-					<ul className="flex flex-wrap w-80 gap-5">
+					<ul className="flex flex-wrap w-full gap-5">
 						<li>
 							<a
 								href="https://www.linkedin.com/in/herison/"

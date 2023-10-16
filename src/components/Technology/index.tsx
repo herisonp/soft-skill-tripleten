@@ -7,9 +7,9 @@ type TechnologyProps = {
 
 export function Technology({ src, title }: TechnologyProps) {
 	return (
-		<li className="p-8 bg-neutral-950 rounded-2xl border border-stone-900 hover:border-white flex flex-col justify-center items-center gap-4 transition-colors">
-			<Image src={src} alt="" width={40} height={40} />
-			<p className="text-zinc-500 text-base font-normal">{title}</p>
+		<li className="p-6 bg-neutral-950 rounded-2xl border border-stone-900 hover:border-blue-500 flex flex-col justify-center items-center gap-4 transition-colors">
+			<Image src={src} alt="" width={40} height={40} className="w-10 h-auto" />
+			<p className="text-zinc-500 text-sm font-normal">{title}</p>
 		</li>
 	);
 }

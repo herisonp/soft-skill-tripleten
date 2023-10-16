@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function NoUse() {
 	return (
-		<Section>
+		<Section id="start">
 			<div className="container md:text-center">
 				<Title>Veja como é simples</Title>
 			</div>

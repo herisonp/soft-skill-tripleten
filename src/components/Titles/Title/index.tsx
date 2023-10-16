@@ -9,7 +9,7 @@ export function Title({ children, className }: TitleProps) {
 	return (
 		<h2
 			className={cn(
-				"text-white text-5xl font-black tracking-tighter",
+				"bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-500 text-5xl font-black tracking-tighter",
 				className
 			)}
 		>
