@@ -1,7 +1,11 @@
+import { cn } from "@/lib/utils";
+
 export function ColumnContanierItem({
-	children
+  children,
+  className,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
+  className?: string;
 }) {
-	return <div className="w-2/5 max-md:w-full">{children}</div>;
+  return <div className={cn("w-full", className)}>{children}</div>;
 }

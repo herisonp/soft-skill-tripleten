@@ -17,7 +17,7 @@ type ButtonProps = {
 };
 
 const buttonVariants = {
-	base: "rounded-lg p-4 flex justify-center items-center gap-2.5",
+	base: "rounded-lg p-4 flex justify-center items-center gap-2.5 transition-all hover:scale-105",
 	variant: {
 		primary: "bg-white hover:bg-zinc-300 text-stone-900",
 		secundary: "bg-neutral-800 hover:bg-neutral-900 text-white"

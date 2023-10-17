@@ -1,7 +1,7 @@
 export function ColumnContainer({ children }: { children: React.ReactNode }) {
-	return (
-		<div className="flex container flex-wrap justify-between gap-10">
-			{children}
-		</div>
-	);
+  return (
+    <div className="container grid grid-cols-1 justify-between gap-8 md:grid-cols-2 md:gap-16 lg:gap-28">
+      {children}
+    </div>
+  );
 }
