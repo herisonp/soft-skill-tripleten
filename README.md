@@ -2,7 +2,7 @@
 
 Bootcamp Desenvolvimento Web - TripleTen
 
-- <a href="https://soft-skill-t10.vercel.app" target="_blank">Veja o deploy</a>
+- <a href="https://softskill-herison.vercel.app/" target="_blank">Veja o deploy</a>
 
 ## 👁 Preview
 
